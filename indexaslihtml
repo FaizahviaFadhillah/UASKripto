@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="gambar/logo.png" alt="Logo">
+            </div>
+            <div class="foto">
+                <img src="gambar/foto.jpeg" alt="Foto">
+            </div>
+            <div class="kelas">
+                Kelas: TI.22.A4
+            </div>
+        </div>
+        <div class="nama">
+            <p><strong>Nama:</strong> Faizah Via Fadhillah</p>
+            <p><strong>NIM:</strong> 312210460</p>
+        </div>
+        <button onclick="toggleBiodata()">Tampilkan Biodata</button> <!-- Tombol untuk toggle biodata -->
+        <button onclick="playBacksound()">Putar Backsound</button> <!-- Tombol untuk memutar backsound -->
+        <div class="footer">
+            <div class="biodata">
+                <p><strong>Biodata:</strong> Anyeonghaseo, saya Faizah Via Fadhillah, seorang mahasiswa Teknik Informatika di Universitas Pelita Bangsa yang saat ini sedang menempuh semester 5. </p>
+                    <p>Saya berzodiak Taurus, yang mungkin menjelaskan sifat saya yang cukup sabar dan tekun dalam menjalani segala hal, terutama dalam dunia teknologi yang penuh tantangan ini.</p>
+                    <p>Selain fokus pada dunia perkuliahan, saya memiliki dua hobi yang selalu mengisi waktu luang saya. Saya sangat menikmati menonton K-Drama, yang selalu memberikan kisah-kisah menarik dan menghibur. </p>
+                    <p>Tak jarang, saya juga menghabiskan waktu dengan mendengarkan musik K-pop, yang menjadi salah satu cara saya untuk bersantai dan mengisi energi positif. Dan saya adalah penggemar berat Lee Jeno NCT, yang selalu menginspirasi saya dengan bakat dan dedikasinya.</p>
+                    <p>Saya percaya bahwa keseimbangan antara belajar dan melakukan hal-hal yang saya cintai adalah kunci untuk terus berkembang dan tetap semangat dalam menjalani setiap hari.</p>
+        </div>
+    </div>
+    <audio id="backsound" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>   
+    
+    <script>
+        function toggleBiodata() {
+            var biodata = document.querySelector('.biodata');
+            var button = document.querySelector('button');
+            
+            // Cek apakah biodata saat ini disembunyikan atau tidak
+            if (biodata.style.display === "none" || biodata.style.display === "") {
+                biodata.style.display = "block";  // Tampilkan biodata
+                button.textContent = "Sembunyikan Biodata";  // Ubah teks tombol
+            } else {
+                biodata.style.display = "none";  // Sembunyikan biodata
+                button.textContent = "Biodata";  // Ubah teks tombol
+            }
+        }
+
+        function playBacksound() {
+            const audio = document.getElementById('backsound');
+            audio.play(); // Memulai audio
+        }
+    </script>
+    </body>
+    </html>
